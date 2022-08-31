@@ -1,0 +1,509 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300&family=Roboto:wght@100;300&display=swap');
+
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    width: min(50rem, 100%);
+    padding-inline: 1rem;
+    margin-inline: auto;
+}
+
+.container-info {
+    display: none;
+}
+
+/* ESTILO TEXTOS */
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    color: #F5DF4E;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+
+h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+.header-projetos a {
+    color: #F5DF4E;
+}
+
+/*TITULO PRINCIPAL*/
+header span {
+    font-weight: 300;
+    color: #F5DF4E;
+}
+
+header h1 {
+    color: white;
+    font-size: 2.7rem;
+    font-weight: 100;
+    display: inline;
+}
+
+header p {
+    margin-block: 1.8rem;
+}
+
+/* ANIMAÇÃO DIGITANDO */
+.line {
+    display: inline-block;
+    padding-right: 1rem;
+    border-right: 2px solid #ccc;
+    animation: blinkCursor 700ms steps(40) infinite normal, typing 3s steps(40)  normal;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 35rem;
+    }
+}
+
+@keyframes blinkCursor {
+    from {
+    border-right-color: #ccc
+    }
+    to {
+    border-right-color: transparent;
+    }
+}
+
+/*BOTÕES*/
+    button {
+    border-radius: 1rem;
+    border: 1px solid #F5DF4E;
+    cursor: pointer;
+    margin: 0 1rem 20rem 0;
+
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+
+    background-color: transparent;
+
+    background-image: -webkit-linear-gradient(145deg, #F5DF4E 50%, transparent 50%);
+    background-image: linear-gradient(145deg, #f1c40f 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+
+button a {
+    width: 12rem;
+    padding-block: .8rem;
+    display: inline-block;
+    color: #fff;
+}
+
+button a:hover {
+    color: #000;
+}
+
+button:hover {
+    background-position: 0;
+    color: black;
+}
+
+/* CONFIGURAÇÃO DA NAVEGAÇÃO */
+.navegacao {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding-bottom: 3rem;
+
+    /* ANIMAÇÃO MENU HAMBURGER */
+    transform: translate(-150%);
+    transition: transform 0.5s ease-in-out;
+}
+
+nav span {
+    display: block;
+}
+
+nav .logo, nav .links-menu {
+    text-align: center;
+}
+
+nav .links-menu a {
+    color: white;
+    display: block;
+    font-size: 1.6rem;
+}
+
+nav .links-menu a:hover {
+    font-weight: bold;
+}
+
+nav .links-menu a + a {
+        margin-top: 4rem;
+}
+
+/* MENU HAMBURGER */
+.container-nav .checkbox {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 32px;
+    top: 17px;
+    right: 20px;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* ESTILO DO ICONE MENU */
+nav .container-linhas {
+    display: block;
+    height: 26px;
+    width: 32px;
+    position: absolute;
+    top: 17px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+nav .container-linhas .linhas {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #fff;
+}
+
+/* ANIMAÇÕES ICONES MENU */
+.container-nav .container-linhas .linha1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .container-nav .container-linhas .linha2 {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .container-nav .container-linhas .linha3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+
+.container-nav input[type="checkbox"]:checked ~ .navegacao {
+    transform: translateX(0);
+  }
+
+  .container-nav input[type="checkbox"]:checked ~ .container-linhas .linha1 {
+    transform: rotate(45deg);
+  }
+
+  .container-nav input[type="checkbox"]:checked ~ .container-linhas .linha2 {
+    transform: scaleY(0);
+  }
+
+  .container-nav input[type="checkbox"]:checked ~ .container-linhas .linha3 {
+    transform: rotate(-45deg);
+  }
+
+/* CABEÇALHO */
+header .header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+header:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0.72%, rgba(0, 0, 0, 0.8) 0.72%), url('./assets/bg-header-m.jpg');
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+header .ver-mais {
+    width: 1.5rem;
+    align-self: center;
+    position: relative;
+    animation: seta .5s infinite alternate ease-in;
+    z-index: -1;
+}
+
+@keyframes seta {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 7px;
+    }
+}
+
+/*CONTAINER SOBRE MIM */
+main .container-sobre {
+    padding-top: 8rem;
+}
+
+main .container-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-block: 10rem;
+}
+
+main .container-habilidades .habilidades {
+    width: 32rem;
+    margin-bottom: 10rem;
+}
+
+main .habilidades .titulo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: .3rem;
+}
+
+.container-sobre h3 {
+    font-weight: bold;
+}
+
+/*CONTAINER PROJETOS */
+.container-projetos {
+   padding-block: 8rem;
+}
+
+.container-img {
+    display: flex;
+    flex-wrap: wrap;
+    margin-block: 1.5rem;
+}
+
+.container-img .img {
+    width: 20rem;
+    overflow: hidden;
+}
+
+.container-img .img img {
+    width: 100%;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    opacity: .5;
+
+}
+
+.container-img .img img:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/*CONTATO*/
+footer {
+    margin-bottom: 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+footer input {
+    display: inline-block;
+    max-width: 130rem;
+    font-size: 1.3rem;
+    font-family: 'Roboto Mono', monospace;
+
+    color: #fff;
+    background-color: #2B2B2B;
+
+    padding: 1.6rem 0 1.6rem 1.3rem;
+    margin-bottom: 1.5rem;
+
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+}
+
+footer button {
+    margin: 0;
+    width: 10rem;
+    padding-block: .8rem;
+    color: white;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (min-width: 768px) {
+    .wrapper {
+        width: min(80rem, 100%)
+    }
+
+    header:before {
+        background-image: linear-gradient(90deg, rgba(0, 0, 0, .8) 0.72%, rgba(0, 0, 0, 0.8) 0.72%), url('./assets/bg-header-g.jpg');
+    }
+
+    /*TAMANHO FONTES*/
+    header h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    /* ANIMAÇÃO DIGITAÇÃO */
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 50rem;
+        }
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .wrapper {
+        width: min(200rem, 100%);
+        padding-inline: 4rem;
+    }
+
+    .container-info {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .container-info h3 {
+        font-family: 'Roboto Mono';
+        font-weight: bold;
+        font-size: 4rem;
+        line-height: 130%;
+    }
+
+    .container-info p {
+        font-weight: 300;
+        font-size: 1.4rem;
+        line-height: 150%;
+    }
+
+    .container-info .info {
+        padding-inline: 4rem
+    }
+
+    .container-info .info + .info {
+        border-left: 1px solid #ffffff50;
+    }
+
+    .container-img .img {
+        width: 35rem;
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 10rem 1fr;
+    }
+
+    body .content {
+        grid-column: 2;
+    }
+
+    nav .container-nav .navegacao {
+        width: 10rem;
+        grid-column: 1;
+        transform: translate(0);
+        position: fixed;
+    }
+
+    .container-nav .checkbox {
+        display: none;
+    }
+
+    nav .container-linhas {
+        display: none;
+    }
+    
+    
+
+
+}
+
+
+@media screen and (min-width: 2000px) {
+    header:before {
+        background: none;
+        }
+}
