@@ -299,6 +299,7 @@ header .ver-mais {
 /*CONTAINER SOBRE MIM */
 main .container-sobre {
     padding-top: 8rem;
+    margin-bottom: 15rem;
 }
 
 main .container-habilidades {
@@ -354,40 +355,6 @@ main .habilidades .titulo {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
     opacity: 1;
-}
-
-/*CONTATO*/
-footer {
-    margin-bottom: 3rem;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-footer input {
-    display: inline-block;
-    max-width: 130rem;
-    font-size: 1.3rem;
-    font-family: 'Roboto Mono', monospace;
-
-    color: #fff;
-    background-color: #2B2B2B;
-
-    padding: 1.6rem 0 1.6rem 1.3rem;
-    margin-bottom: 1.5rem;
-
-    border-radius: 1rem;
-    border: none;
-    outline: none;
-}
-
-footer button {
-    margin: 0;
-    width: 10rem;
-    padding-block: .8rem;
-    color: white;
 }
 
 /*MEDIA QUERIES*/
